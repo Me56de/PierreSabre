@@ -20,6 +20,11 @@ public class Humain {
 		return argent;
 	}
 	
+	public void setArgent(int argent) {
+		this.argent = argent;
+	}
+
+
 	public String parler() {
 		return "(" + nom + ")" + "-";
 	}
