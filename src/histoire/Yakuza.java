@@ -13,11 +13,11 @@ public class Yakuza extends Humain {
 	}
 	
 	public int perdre() {
-        int argentPerdu = argent;
+        int argentPerdu = getArgent();
         perdreArgent(argentPerdu); 
         reputation--;
 
-        System.out.println("(" + getNom() + ") - J’ai perdu mon duel et mes " +
+        parler("(" + getNom() + ") - J’ai perdu mon duel et mes " +
                 argentPerdu + " sous, snif... J'ai déshonoré le clan de " + clan + ".");
 
         return argentPerdu;
@@ -27,7 +27,7 @@ public class Yakuza extends Humain {
         gagnerArgent(gain);
         reputation++;
 
-        System.out.println("(" + getNom() + ") - Ce ronin pensait vraiment battre "
+        parler("(" + getNom() + ") - Ce ronin pensait vraiment battre "
                 + getNom() + " du clan de " + clan + " ?\nJe l'ai dépouillé de ses "
                 + gain + " sous.");
     }
@@ -35,13 +35,13 @@ public class Yakuza extends Humain {
 
 
 	public void extorquer(Commercant victime) {
-		System.out.println(parler() + " Tiens, tiens, ne serait-ce pas un faible marchand qui passe par là ?");
-		System.out.println(parler()+ victime.getNom() + ", si tu tiens à la vie donne moi ta bourse !");
+		parler(" Tiens, tiens, ne serait-ce pas un faible marchand qui passe par là ?");
+		parler(victime.getNom() + ", si tu tiens à la vie donne moi ta bourse !");
 		int montantVole = victime.seFaireExtorquer();
 		
 		setArgent(getArgent() + montantVole);
 		reputation++;
-		System.out.println(parler() + "J’ai piqué les " + montantVole + " sous de " + victime.getNom() + ", ce qui me fait "
+		parler("J’ai piqué les " + montantVole + " sous de " + victime.getNom() + ", ce qui me fait "
 				+ getArgent() + " sous dans ma poche. Hi ! Hi !");
 	}
 
