@@ -3,7 +3,7 @@ package histoire;
 public class Humain {
 	private String nom;
 	private String boisson;
-	private int argent;
+	protected int argent;
 	
 	
 	public Humain(String nom, String boisson, int argent) {
@@ -46,11 +46,11 @@ public class Humain {
 		}
 	}
 	
-	private int gagnerArgent(int gain) {
+	protected int gagnerArgent(int gain) {
 		return argent = argent + gain ;
 	}
 	
-	private int perdreArgent(int perte) {
+	protected int perdreArgent(int perte) {
 		return argent = argent - perte;
 	}
 	
